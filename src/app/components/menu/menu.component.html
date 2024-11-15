@@ -1,0 +1,35 @@
+<nav class="navbar navbar-expand-sm navbar-dark bg-dark" aria-label="Third navbar example">
+  <div class="container-fluid">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample03" aria-controls="navbarsExample03" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse">
+      <ul class="navbar-nav me-auto mb-2 mb-sm-0">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/">Cubos</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/iniciarSesion">Iniciar Sesión</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/">Registrarse</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/perfil">Perfil</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/carrito">Carrito</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Marcas</a>
+          <ul *ngIf="marcas && marcas.length > 0" class="dropdown-menu">
+            <li *ngFor="let marca of marcas" class="list-group-item-dark">
+              <a class="dropdown-item" [routerLink]="'/marca/' + marca">{{ marca }}</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

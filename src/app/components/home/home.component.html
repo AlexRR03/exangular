@@ -1,0 +1,14 @@
+<div *ngIf="cubos.length > 0; else noCubos">
+    <ul>
+      <li *ngFor="let cubo of cubos">
+        <h3>{{ cubo.nombre }}</h3>
+        <p>Modelo: {{ cubo.modelo }}</p>
+        <p>Marca: {{ cubo.marca }}</p>
+        <img [src]="cubo.imagen"  width="100" />
+        <button [routerLink]="['/detalles/'+cubo.idCubo]">Detalles</button>
+      </li>
+    </ul>
+  </div>
+  <ng-template #noCubos>
+    <p>No hay cubos disponibles.</p>
+  </ng-template>
